@@ -13,7 +13,7 @@
 
   <p>This line below will say loaded if TensorFlow.js is loaded:</p>
   <p id="tfjs_status">Awaiting TF.js load</p>
-  <p>This line below will say model loaded if TFLite model found</p>
+  <p>This line below will say model loaded if TFLite model is loaded:</p>
   <p id="model_status">Awaiting TF.js model/TFLite model loading</p>
 
   <!-- Upload image -->
@@ -25,6 +25,7 @@
   <p id="predicted_class"></p>
 
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs/dist/tf.min.js" type="text/javascript" async></script>
+  <!-- This is from: https://www.jsdelivr.com/package/npm/@tensorflow/tfjs-tflite -->
   <script src="https://cdn.jsdelivr.net/npm/@tensorflow/tfjs-tflite@0.0.1-alpha.7/dist/tf-tflite.min.js"></script>
   <script src="script.js"></script>
 </body>
