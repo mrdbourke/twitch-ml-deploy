@@ -27,14 +27,15 @@ if (tfjs_status) {
 
 let model; // This is in global scope
 
-const loadModel = async () => {
+async function loadModel() {
   try {
     const tfliteModel = await tflite.loadTFLiteModel(
-      "/10_whole_foods_model_v0.tflite"
+      // "10_whole_foods_model_v0.tflite"
+      "https://storage.googleapis.com/food-vision-models-test/10_whole_foods_model_v0.tflite"
     );
     model = tfliteModel; // assigning it to the global scope model as tfliteModel can only be used within this scope
-    // console.log(tfliteModel);
 
+    // console.log(tfliteModel);
     //  Check if model loaded
     if (tfliteModel) {
       model_status.innerText = "Model loaded";
@@ -46,11 +47,10 @@ const loadModel = async () => {
   // // Prepare input tensors.
   // const img = tf.browser.fromPixels(document.querySelector('img'));
   // const input = tf.sub(tf.div(tf.expandDims(img), 127.5), 1);
-
   // // Run inference and get output tensors.
   // let outputTensor = tfliteModel.predict(input);
   // console.log(outputTensor.dataSync());
-};
+}
 loadModel();
 
 // Function to classify image
