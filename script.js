@@ -11,14 +11,13 @@ const classes = {
   9: 'strawberries'
 };
 
-const tfjs_load_status = document.getElementById("status");
+const tfjs_status = document.getElementById("status");
 
-if (tfjs_load_status) {
-  tfjs_status.innerText = `Loaded TensorFlow.js - version:${tf.version.tfjs}`;
+if (tfjs_status) {
+  tfjs_status.innerText = "Loaded TensorFlow.js - version:" + tf.version.tfjs;
 }
 
 // // This is from: https://www.jsdelivr.com/package/npm/@tensorflow/tfjs-tflite
-// // Load model from URL
 // const tfliteModel = tflite.loadTFLiteModel(
 //     // URL to storage of model
 //     "https://storage.googleapis.com/food-vision-models-test/10_whole_foods_model_v0.tflite"
@@ -30,8 +29,8 @@ let model; // This is in global scope
 const loadModel = async () => {
   try {
     const tfliteModel = await tflite.loadTFLiteModel(
-      // "10_whole_foods_model_v0.tflite"
       "https://storage.googleapis.com/food-vision-models-test/10_whole_foods_model_v0.tflite"
+      // "/10_whole_foods_model_v0.tflite"
     );
     model = tfliteModel; // assigning it to the global scope model as tfliteModel can only be used within this scope
     // console.log(tfliteModel);
@@ -112,14 +111,14 @@ function getImage() {
 // Add listener to see if someone uploads an image
 fileInput.addEventListener("change", getImage);
 
-   // console.log(tf.browser.fromPixels(fileInput.files[0]).print());
+ // console.log(tf.browser.fromPixels(fileInput.files[0]).print());
 
-   // console.log(tf.browser.fromPixels(document.querySelector("image")));
+ // console.log(tf.browser.fromPixels(document.querySelector("image")));
 
-   // const test_image = new ImageData(1, 1);
-   // test_image.data[0] = 100;
-   // test_image.data[1] = 150;
-   // test_image.data[2] = 200;
-   // test_image.data[3] = 255;
+ // const test_image = new ImageData(1, 1);
+ // test_image.data[0] = 100;
+ // test_image.data[1] = 150;
+ // test_image.data[2] = 200;
+ // test_image.data[3] = 255;
 
-   // tf.browser.fromPixels(test_image).print();
+ // tf.browser.fromPixels(test_image).print();
