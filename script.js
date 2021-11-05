@@ -26,7 +26,7 @@ const loadModel = async () => {
   try {
     const tfliteModel = await tflite.loadTFLiteModel(
       "https://storage.googleapis.com/food-vision-models-test/10_whole_foods_model_v0.tflite"
-      // "/10_whole_foods_model_v0.tflite"
+      // "code/twitch-ml-deploy/10_whole_foods_model_v0.tflite"
     );
     model = tfliteModel; // assigning it to the global scope model as tfliteModel can only be used within this scope
     // console.log(tfliteModel);
